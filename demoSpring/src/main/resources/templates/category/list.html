@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Danh sách Category</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <h3>Danh sách Catergory</h3>
+        <a th:href="@{/categories/new}">Thêm catergory</a>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c : ${categories}">
+                    <td th:text="${c.id}"></td>
+                    <td th:text="${c.name}"></td>
+                    <td>
+                        <a th:href="@{/categories/edit/{id}(id=${c.id})}">Sửa</a> |
+                        <a th:href="@{/categories/delete/{id}(id=${c.id})}">Xóa</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

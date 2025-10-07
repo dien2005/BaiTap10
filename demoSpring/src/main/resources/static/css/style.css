@@ -1,0 +1,132 @@
+/* === Reset cơ bản === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === Body === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+}
+
+/* === Container === */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px dashed #6c63ff; /* viền màu để thấy bố cục */
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+/* === Header === */
+.header {
+    border: 2px solid #ff6f61; /* viền màu khác */
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #ffe6e1;
+}
+
+.header h1 {
+    color: #ff6f61;
+}
+
+/* === Table === */
+.table-container {
+    border: 2px solid #61dafb;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #e6f7ff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #6c63ff;
+    color: white;
+}
+
+thead th {
+    padding: 10px;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* === Form === */
+.form-container {
+    border: 2px solid #ffa500;
+    padding: 15px;
+    background-color: #fff5e6;
+    border-radius: 8px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* === Buttons === */
+button {
+    padding: 8px 15px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-add { background-color: #6c63ff; color: white; }
+.btn-edit { background-color: #ffa500; color: white; }
+.btn-delete { background-color: #ff4c4c; color: white; }
+
+/* === Bố cục trực quan (highlight) === */
+.container > div {
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px dotted #999; /* highlight các section */
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    button {
+        margin-bottom: 5px;
+    }
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #6c63ff;
+    color: white;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #ff6f61;
+}
+

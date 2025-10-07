@@ -1,0 +1,13 @@
+<div th:fragment="header" class="header">
+    <img th:src="@{/images/desuwa.jpg}" alt="My Photo" width="100" height="100" style="border-radius: 50%">
+    <h2>Admin Management</h2>
+
+    <!-- Thanh menu điều hướng -->
+    <nav>
+        <ul style="list-style: none; padding: 0; margin: 10px 0; display: flex; gap: 15px; justify-content: center;">
+            <li><a th:href="@{/categories}">Quản lý Category</a></li>
+            <li><a th:href="@{/admin/users}">Quản lý User</a></li>
+            <li><a th:href="@{/admin/videos}">Quản lý Video</a></li>
+        </ul>
+    </nav>
+</div>

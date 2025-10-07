@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Danh sách Video</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h3>Danh sách Video</h3>
+
+    <form method="get" th:action="@{/admin/videos}">
+        <input type="text" name="keyword" th:value="${keyword}" placeholder="Tìm theo tiêu đề...">
+        <button type="submit">Tìm</button>
+    </form>
+    <br>
+
+    <a th:href="@{/admin/videos/new}">Thêm Video</a>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tiêu đề</th>
+            <th>URL</th>
+            <th>Category</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="v : ${videos}">
+            <td th:text="${v.id}"></td>
+            <td th:text="${v.title}"></td>
+            <td><a th:href="${v.url}" th:text="${v.url}" target="_blank"></a></td>
+            <td th:text="${v.category != null ? v.category.name : 'Không có'}"></td>
+            <td>
+                <a th:href="@{/admin/videos/edit/{id}(id=${v.id})}">Sửa</a> |
+                <a th:href="@{/admin/videos/delete/{id}(id=${v.id})}">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

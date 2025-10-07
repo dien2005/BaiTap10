@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/main}">
+<head>
+<title>Form Video</title>
+</head>
+<body>
+	<main layout:fragment="content">
+		<h3 th:text="${video.id == null ? 'Thêm Video' : 'Sửa Video'}"></h3>
+		<form th:action="@{/admin/videos/save}" th:object="${video}"
+			method="post">
+			<input type="hidden" th:field="*{id}"> <label>Tiêu
+				đề:</label> <input type="text" th:field="*{title}"><br> <label>URL:</label>
+			<input type="text" th:field="*{url}"><br> <label>Category:</label>
+			<select th:field="*{category.id}">
+				<option th:each="c : ${categories}" th:value="${c.id}"
+					th:text="${c.name}"></option>
+			</select>
+
+
+			<button type="submit">Lưu</button>
+		</form>
+	</main>
+</body>
+</html>

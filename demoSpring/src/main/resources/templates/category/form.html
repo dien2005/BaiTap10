@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Category Form</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h3 th:text="${category.id == null ? 'Thêm Category' : 'Sửa Category'}"></h3>
+    <form th:action="@{/categories/save}" th:object="${category}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <label>Tên: </label>
+        <input type="text" th:field="*{name}">
+        <button type="submit">Lưu</button>
+    </form>
+</main>
+</body>
+</html>

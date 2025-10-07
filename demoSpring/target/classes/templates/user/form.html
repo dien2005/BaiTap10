@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Form User</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h3 th:text="${user.id == null ? 'Thêm User' : 'Sửa User'}"></h3>
+    <form th:action="@{/admin/users/save}" th:object="${user}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <label>Username:</label>
+        <input type="text" th:field="*{username}"><br>
+
+        <label>Password:</label>
+        <input type="password" th:field="*{password}"><br>
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}"><br>
+
+        <label>Role:</label>
+        <select th:field="*{role}">
+            <option value="USER">USER</option>
+            <option value="ADMIN">ADMIN</option>
+        </select><br><br>
+
+        <button type="submit">Lưu</button>
+    </form>
+</main>
+</body>
+</html>
